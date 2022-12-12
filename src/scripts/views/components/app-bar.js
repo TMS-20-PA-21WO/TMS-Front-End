@@ -1,4 +1,5 @@
 import CONFIG from '../../global/config';
+import logout from './popup-logout';
 
 class AppBar extends HTMLElement {
   connectedCallback() {
@@ -32,7 +33,7 @@ class AppBar extends HTMLElement {
         <li class="nav-item">
           <a class="nav-link" href="#/partner">Partner</a>
         </li>
-        <div id="isUser"></div>
+        <div id="isUser" class="d-flex"></div>
       </ul>
     </div>
   </div>
@@ -40,18 +41,24 @@ class AppBar extends HTMLElement {
 `;
 
     const isUser = document.querySelector('#isUser');
-    const user = 2;
+    const user = 1;
     if (user === 1) {
-      isUser.innerHTML = `
+      isUser.innerHTML += `
         <li class="nav-item">
-          <a class="nav-link" href="#/login">Login</a>
+          <a class="nav-link" href="#/cart">Cart</a>
         </li>
+        <li class="nav-item">
+          <button type="button" class="btn btn-transparent" data-bs-toggle="modal" data-bs-target="#logout">
+            Logout
+          </button>
+        </li>
+        ${logout}
         `;
     } else {
       isUser.innerHTML = `
-        <li class="nav-item">
-          <a class="nav-link" href="#/logout">Logout</a>
-        </li>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#logout">
+          Login
+        </button>
         `;
     }
   }

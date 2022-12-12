@@ -4,6 +4,7 @@ import { getElement } from '../utils/element';
 
 import './components/app-bar';
 import './components/hero-element';
+import './components/popup-logout';
 
 class App {
   constructor({ content }) {
