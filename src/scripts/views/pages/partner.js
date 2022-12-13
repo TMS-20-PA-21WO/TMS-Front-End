@@ -1,6 +1,15 @@
+import { getDataLocalStorage } from '../../data/local-storage';
 import CONFIG from '../../global/config';
 
 const Partner = {
+  async beforeRender() {
+    if (getDataLocalStorage() === null) {
+      location.replace('#/partner');
+      // location.reload();
+    } else {
+      location.replace('#/partner');
+    }
+  },
   async render() {
     return `
 <div class="container text-center bg-transparent">
@@ -10,7 +19,7 @@ const Partner = {
     <h2 class="text-left">Dekorasi<h2>     
     <div class="row">
 
-        <div class="col-lg-3 bg-secondary p-3">
+        <div class="col-6 col-lg-3 bg-secondary p-3">
             <div class="container text-center bg-transparent">
                 <p>
                     <img src="${CONFIG.PARTNER_DEKORASI_AERODECOR}" class="img img-fluid" alt="Aerodecor">
@@ -18,7 +27,7 @@ const Partner = {
             </div>
         </div>
 
-        <div class="col-lg-3 bg-secondary p-3">
+        <div class="col-6 col-lg-3 bg-secondary p-3">
             <div class="container text-center bg-transparent">
                 <p>
                     <img src="${CONFIG.PARTNER_DEKORASI_MUSTIKA}" class="img img-fluid" alt="Mustika">
@@ -26,7 +35,7 @@ const Partner = {
             </div>
         </div>
 
-        <div class="col-lg-3 bg-secondary p-3">
+        <div class="col-6 col-lg-3 bg-secondary p-3">
             <div class="container text-center bg-transparent">
                 <p>
                     <img src="${CONFIG.PARTNER_DEKORASI_SEKAR}" class="img img-fluid" alt="Sekar99">
@@ -34,7 +43,7 @@ const Partner = {
             </div>
         </div>
 
-        <div class="col-lg-3 bg-secondary p-3">
+        <div class="col-6 col-lg-3 bg-secondary p-3">
             <div class="container text-center bg-transparent">
                 <p>
                     <img src="${CONFIG.PARTNER_DEKORASI_AISYA}" class="img img-fluid" alt="Aisya">
@@ -45,7 +54,7 @@ const Partner = {
 
     <h2 class="text-left">Make Up Artist<h2>
     <div class="row">
-        <div class="col-lg-3 bg-secondary p-3">
+        <div class="col-6 col-lg-3 bg-secondary p-3">
             <div class="container text-center bg-transparent">
                 <p>
                     <img src="${CONFIG.PARTNER_MAKEUP_SHAIRA}" class="img img-fluid" alt="Shaira">
@@ -53,7 +62,7 @@ const Partner = {
             </div>
         </div>
 
-        <div class="col-lg-3 bg-secondary p-3">
+        <div class="col-6 col-lg-3 bg-secondary p-3">
             <div class="container text-center bg-transparent">
                 <p>
                     <img src="${CONFIG.PARTNER_MAKEUP_MALATHI}" class="img img-fluid" alt="Malathi">
@@ -61,7 +70,7 @@ const Partner = {
             </div>
         </div>
 
-        <div class="col-lg-3 bg-secondary p-3">
+        <div class="col-6 col-lg-3 bg-secondary p-3">
             <div class="container text-center bg-transparent">
                 <p>
                     <img src="${CONFIG.PARTNER_MAKEUP_AISYA}" class="img img-fluid" alt="Aisya">
@@ -69,7 +78,7 @@ const Partner = {
             </div>
         </div>
 
-        <div class="col-lg-3 bg-secondary p-3">
+        <div class="col-6 col-lg-3 bg-secondary p-3">
             <div class="container text-center bg-transparent">
                 <p>
                     <img src="${CONFIG.PARTNER_MAKEUP_INTAN}" class="img img-fluid" alt="Intan">
@@ -80,7 +89,7 @@ const Partner = {
 
     <h2 class="text-left">Photo Studio<h2>
     <div class="row">
-        <div class="col-lg-3 bg-secondary p-3">
+        <div class="col-6 col-lg-3 bg-secondary p-3">
             <div class="container text-center bg-transparent">
                 <p>
                     <img src="${CONFIG.PARTNER_PHOTOSTUDIO_CASSADA}" class="img img-fluid" alt="Cassada">
@@ -88,7 +97,7 @@ const Partner = {
             </div>
         </div>
 
-        <div class="col-lg-3 bg-secondary p-3">
+        <div class="col-6 col-lg-3 bg-secondary p-3">
             <div class="container text-center bg-transparent">
                 <p>
                     <img src="${CONFIG.PARTNER_PHOTOSTUDIO_VINDICE}" class="img img-fluid" alt="Vindice">
@@ -96,7 +105,7 @@ const Partner = {
             </div>
         </div>
 
-        <div class="col-lg-3 bg-secondary p-3">
+        <div class="col-6 col-lg-3 bg-secondary p-3">
             <div class="container text-center bg-transparent">   
                 <p>
                     <img src="${CONFIG.PARTNER_PHOTOSTUDIO_MAMOTO}" class="img img-fluid" alt="Mamoto">
@@ -104,7 +113,7 @@ const Partner = {
             </div>
         </div>
 
-        <div class="col-lg-3 bg-secondary p-3">
+        <div class="col-6 col-lg-3 bg-secondary p-3">
             <div class="container text-center bg-transparent">
                 <p>
                 <img src="${CONFIG.PARTNER_PHOTOSTUDIO_LURBIS}" class="img img-fluid" alt="Lurbis">
@@ -115,7 +124,7 @@ const Partner = {
 
     <h2 class="text-left">MC<h2>
     <div class="row">
-        <div class="col-lg-3 bg-secondary p-3">
+        <div class="col-6 col-lg-3 bg-secondary p-3">
             <div class="container text-center bg-transparent">
                 <p>
                     <img src="${CONFIG.PARTNER_MC_MOULYA}" class="img img-fluid" alt="Moulya">
@@ -123,7 +132,7 @@ const Partner = {
             </div>
         </div>
 
-        <div class="col-lg-3 bg-secondary p-3">
+        <div class="col-6 col-lg-3 bg-secondary p-3">
             <div class="container text-center bg-transparent">
                 <p>
                     <img src="${CONFIG.PARTNER_MC_BARRY}" class="img img-fluid" alt="Barry">
@@ -131,7 +140,7 @@ const Partner = {
             </div>
         </div>
 
-        <div class="col-lg-3 bg-secondary p-3">
+        <div class="col-6 col-lg-3 bg-secondary p-3">
             <div class="container text-center bg-transparent">
                 <p>
                     <img src="${CONFIG.PARTNER_MC_WINDIWIJAKSANA}" class="img img-fluid" alt="Windiwijaksana">
@@ -139,7 +148,7 @@ const Partner = {
             </div>
         </div>
 
-        <div class="col-lg-3 bg-secondary p-3">
+        <div class="col-6 col-lg-3 bg-secondary p-3">
             <div class="container text-center bg-transparent">
                 <p>
                     <img src="${CONFIG.PARTNER_MC_YOHANSAPUTRA}" class="img img-fluid" alt="Yohansaputra">
@@ -150,7 +159,7 @@ const Partner = {
 
     <h2 class="text-left">Music<h2>
     <div class="row">
-        <div class="col-lg-3 bg-secondary p-3">
+        <div class="col-6 col-lg-3 bg-secondary p-3">
             <div class="container text-center bg-transparent">
                 <p>
                 <img src="${CONFIG.PARTNER_MUSIC_GOLDENMUSIC}" class="img img-fluid" alt="Goldenmusic">
@@ -158,7 +167,7 @@ const Partner = {
             </div>
         </div>
 
-        <div class="col-lg-3 bg-secondary p-3">
+        <div class="col-6 col-lg-3 bg-secondary p-3">
             <div class="container text-center bg-transparent">
                 <p>
                 <img src="${CONFIG.PARTNER_MUSIC_BOUGENVILLE}" class="img img-fluid" alt="Bougenville">
@@ -173,9 +182,9 @@ const Partner = {
       `;
   },
 
-  //   async afterRender() {
-
-  //   },
+  async afterRender() {
+    console.log('Halaman Partner');
+  },
 };
 
 export default Partner;

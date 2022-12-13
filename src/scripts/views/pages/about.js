@@ -1,6 +1,15 @@
+import { getDataLocalStorage } from '../../data/local-storage';
 import CONFIG from '../../global/config';
 
 const About = {
+  async beforeRender() {
+    if (getDataLocalStorage() === null) {
+      location.replace('#/about');
+      //   location.reload();
+    } else {
+      location.replace('#/about');
+    }
+  },
   async render() {
     return `
 <div class="container text-center bg-transparent">
@@ -13,7 +22,7 @@ const About = {
     </p><br>
 
     <div class="row">
-        <div class="col-lg-4">
+        <div class="col-6 col-lg-4">
             <div class="container text-center bg-transparent, sppb-divider sppb-divider-border">
                 <p>
                     <img src="${CONFIG.CREW_LUKMAN}" class="img img-fluid" alt="Lukman">
@@ -23,7 +32,7 @@ const About = {
             </div>
         </div>
 
-        <div class="col-lg-4">
+        <div class="col-6 col-lg-4">
             <div class="container text-center bg-transparent, sppb-divider sppb-divider-border">
                 <p>
                     <img src="${CONFIG.CREW_PUTRI}" class="img img-fluid" alt="Putri">
@@ -33,7 +42,7 @@ const About = {
             </div>
         </div>
 
-        <div class="col-lg-4">
+        <div class="col-6 col-lg-4">
             <div class="container text-center bg-transparent, sppb-divider sppb-divider-border">
                 <p>
                 <img src="${CONFIG.CREW_RAHMA}" class="img img-fluid" alt="Rahma">
@@ -43,7 +52,7 @@ const About = {
             </div>
         </div>
 
-        <div class="col-lg-4">
+        <div class="col-6 col-lg-4">
             <div class="container text-center bg-transparent, sppb-divider sppb-divider-border">
                 <p>
                     <img src="${CONFIG.CREW_YASIN}" class="img img-fluid" alt="Yasin">
@@ -53,7 +62,7 @@ const About = {
             </div>
         </div>
 
-        <div class="col-lg-4">
+        <div class="col-6 col-lg-4">
             <div class="container text-center bg-transparent, sppb-divider sppb-divider-border">
                 <p>
                     <img src="${CONFIG.CREW_FAJAR}" class="img img-fluid" alt="Fajar">
@@ -63,7 +72,7 @@ const About = {
             </div>
         </div>
 
-        <div class="col-lg-4">
+        <div class="col-6 col-lg-4">
             <div class="container text-center bg-transparent, sppb-divider sppb-divider-border">
                 <p>
                     <img src="${CONFIG.CREW_EKO}" class="img img-fluid" alt="Eko">
@@ -75,13 +84,12 @@ const About = {
 
     </div>
 </div>
-
-      `;
+`;
   },
 
-  //   async afterRender() {
-
-  //   },
+  async afterRender() {
+    console.log('Halaman About');
+  },
 };
 
 export default About;
