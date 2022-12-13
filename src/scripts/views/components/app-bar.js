@@ -1,5 +1,9 @@
 import CONFIG from '../../global/config';
+// import member from '../../utils/member';
+import login from './popup-login';
 import logout from './popup-logout';
+import { getDataLocalStorage, removeDataLocalStorage, saveDataToLocalStorage } from '../../data/local-storage';
+import register from './popup-register';
 
 class AppBar extends HTMLElement {
   connectedCallback() {
@@ -41,26 +45,58 @@ class AppBar extends HTMLElement {
 `;
 
     const isUser = document.querySelector('#isUser');
-    const user = 1;
-    if (user === 1) {
-      isUser.innerHTML += `
-        <li class="nav-item">
-          <a class="nav-link" href="#/cart">Cart</a>
-        </li>
-        <li class="nav-item">
-          <button type="button" class="btn btn-transparent" data-bs-toggle="modal" data-bs-target="#logout">
-            Logout
-          </button>
-        </li>
-        ${logout}
-        `;
-    } else {
+    if (getDataLocalStorage() !== null) {
       isUser.innerHTML = `
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#logout">
-          Login
-        </button>
-        `;
+          <li class="nav-item">
+            <a class="nav-link" href="#/cart">Cart</a>
+          </li>
+          <li class="nav-item" id="logoutButton">
+            <button type="button" class="btn btn-transparent" data-bs-toggle="modal" data-bs-target="#logout">
+              Logout
+            </button>
+          </li>`;
     }
+    if (getDataLocalStorage() === null) {
+      isUser.innerHTML = `
+          <li class="nav-item" id="loginButton">
+            <button type="button" class="btn btn-transparent" data-bs-toggle="modal" data-bs-target="#login">
+              Login
+            </button>
+          </li>
+          <li class="nav-item" id="registerButton">
+            <button type="button" class="btn btn-transparent" data-bs-toggle="modal" data-bs-target="#register">
+              Register
+            </button>
+          </li>
+          `;
+    }
+    logout();
+    login();
+    register();
+
+    const btnLogout = document.querySelector('#btnLogout');
+    btnLogout.addEventListener('click', () => {
+      removeDataLocalStorage();
+      location.reload();
+    });
+
+    const formRegister = document.querySelector('#register-form');
+    formRegister.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      // const inputEmail = formRegister.elements.namedItem('email').value;
+      // const inputPassword = formRegister.elements.namedItem('password').value;
+      // saveDataToLocalStorage(inputEmail, inputPassword);
+      location.reload();
+    });
+
+    const formLogin = document.querySelector('#login-form');
+    formLogin.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const inputEmail = formLogin.elements.namedItem('loginemail').value;
+      const inputPassword = formLogin.elements.namedItem('loginpassword').value;
+      saveDataToLocalStorage(inputEmail, inputPassword);
+      location.reload();
+    });
   }
 }
 

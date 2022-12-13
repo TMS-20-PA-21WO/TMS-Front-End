@@ -1,5 +1,7 @@
-const logout = `
-<div class="modal fade" id="logout" tabindex="-1" aria-labelledby="popUpLogout" aria-hidden="true">
+const logout = () => {
+  const popUpLogout = document.querySelector('#isUser');
+  popUpLogout.innerHTML += `
+<div class="modal fade" id="logout" tabindex="-1" aria-labelledby="popuplogout" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
@@ -14,6 +16,7 @@ const logout = `
     </div>
   </div>
 </div>
-`;
+  `;
+};
 
 export default logout;

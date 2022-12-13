@@ -1,5 +1,6 @@
 const CONFIG = {
-  // BASE_URL: 'https://restaurant-api.dicoding.dev/',
+  BASE_URL: 'localhost:8080/api',
+  STORAGE_KEY: 'DUASATU_WO',
 
   // LOGO ASSETS
   IMAGE_LOGO_PATH: './images/logo/logo21-2.png',
