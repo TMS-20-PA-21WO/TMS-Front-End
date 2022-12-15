@@ -51,16 +51,16 @@ const CONFIG = {
   PARTNER_PHOTOSTUDIO_VINDICE: './images/partner/photostudio/vindice.png',
 
   // PORTOFOLIO ASSETS
-  PORTOFOLIO_ANISA_RIZKY: './images/portofolio/anisa-rizky.jpg',
-  PORTOFOLIO_ARIESA_ARDI: './images/portofolio/ariesa-ardi.jpg',
-  PORTOFOLIO_AYU_RANDI: './images/portofolio/ayu-randi.jpg',
-  PORTOFOLIO_DESTY_DODI: './images/portofolio/desty-dodi.jpg',
-  PORTOFOLIO_GINA_FAHMI: './images/portofolio/gina-fahmi.jpg',
-  PORTOFOLIO_MUTIARA_ARI: './images/portofolio/mutiara-ari.jpg',
-  PORTOFOLIO_NADYA_FARIZ: './images/portofolio/nadya-fariz.jpg',
-  PORTOFOLIO_RIVI_FERDI: './images/portofolio/rivi-ferdi.jpg',
-  PORTOFOLIO_TEGUH_RISNA: './images/portofolio/teguh-risna.jpg',
-  PORTOFOLIO_WIDIS_ANGGA: './images/portofolio/widis-angga.jpg',
+  PORTOFOLIO_ANISA_RIZKY: './images/portfolio/anisa-rizky.jpg',
+  PORTOFOLIO_ARIESA_ARDI: './images/portfolio/ariesa-ardi.jpg',
+  PORTOFOLIO_AYU_RANDI: './images/portfolio/ayu-randi.jpg',
+  PORTOFOLIO_DESTY_DODI: './images/portfolio/desty-dodi.jpg',
+  PORTOFOLIO_GINA_FAHMI: './images/portfolio/gina-fahmi.jpg',
+  PORTOFOLIO_MUTIARA_ARI: './images/portfolio/mutiara-ari.jpg',
+  PORTOFOLIO_NADYA_FARIZ: './images/portfolio/nadya-fariz.jpg',
+  PORTOFOLIO_RIVI_FERDI: './images/portfolio/rivi-ferdi.jpg',
+  PORTOFOLIO_TEGUH_RISNA: './images/portfolio/teguh-risna.jpg',
+  PORTOFOLIO_WIDIS_ANGGA: './images/portfolio/widis-angga.jpg',
 };
 
 export default CONFIG;
