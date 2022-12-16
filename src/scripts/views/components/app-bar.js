@@ -98,11 +98,10 @@ class AppBar extends HTMLElement {
 
       if (responseRegister.result === true) {
         alert('Register Berhasil. Silahkan Login');
+        location.reload();
       } else {
         alert('Register Gagal');
       }
-
-      location.reload();
     });
 
     const formLogin = document.querySelector('#login-form');
@@ -113,8 +112,12 @@ class AppBar extends HTMLElement {
 
       const responseLogin = await Auth.login(inputEmail, inputPassword);
 
-      saveDataToLocalStorage(responseLogin.data[0].id, responseLogin.data[0].username);
-      location.reload();
+      if (responseLogin.data[0] == null) {
+        alert('Email atau Password Salah');
+      } else {
+        saveDataToLocalStorage(responseLogin.data[0].id, responseLogin.data[0].username);
+        location.reload();
+      }
     });
   }
 }
