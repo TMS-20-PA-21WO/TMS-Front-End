@@ -1,3 +1,4 @@
+import Paket from '../../service/api/paket';
 import itemPaket from './item-paket';
 
 class BodyAddPemesanan extends HTMLElement {

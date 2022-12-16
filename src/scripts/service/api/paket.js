@@ -6,22 +6,18 @@ const axios = require('axios');
 
 class Paket {
   static async getAllPaket() {
-    const config = {
-      method: 'get',
+    return axios({
       url: API_ENDPOINT.READ_PAKET,
-      headers: {},
-    };
-
-    axios(config)
-      .then((response) => {
-        // console.log(...response.data.data);
-        console.log(response.data.data);
-        // itemPaket(...response.data.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }
+      method: 'get',
+      timeout: 8000,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((res) => res.data)
+      .catch((err) => console.error(err));
+    }
+    getAllPaket().then((res) => console.log(res));
 
   static async getPaketByID(id) {
     const config = {

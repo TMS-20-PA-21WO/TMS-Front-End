@@ -30,13 +30,19 @@ const Cart = {
     pemesanan();
     Paket.getAllPaket();
     console.log('Halaman Cart');
-    const listPemesanan = document.querySelector('#list-history-pemesanan');
-    const ItemPemesanan = document.createElement('item-pemesanan');
-    listPemesanan.appendChild(ItemPemesanan);
+    // const listPemesanan = document.querySelector('#list-history-pemesanan');
+    // const ItemPemesanan = document.createElement('item-pemesanan');
+    // listPemesanan.appendChild(ItemPemesanan);
 
-    const listPaket = document.querySelector('#paket');
-    const itemPaket = document.createElement('body-paket');
-    listPaket.appendChild(itemPaket);
+    // const listPaket = document.querySelector('#paket');
+    // const itemPaket = document.createElement('body-paket');
+    // listPaket.appendChild(itemPaket);
+
+    const responseData = await Paket.getAllPaket();
+    responseData.data.data.forEach((item) => {
+      console.log(item);
+      console.log(item.package_name);
+    });
   },
 };
 
