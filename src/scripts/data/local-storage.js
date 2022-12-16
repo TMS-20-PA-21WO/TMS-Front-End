@@ -5,10 +5,10 @@ const getDataLocalStorage = () => {
   return JSON.parse(data);
 };
 
-const saveDataToLocalStorage = (inputEmail, inputPassword) => {
+const saveDataToLocalStorage = (id, username) => {
   const object = {
-    userEmail: inputEmail,
-    userPassword: inputPassword,
+    userId: id,
+    userUsername: username,
   };
   const parsed = JSON.stringify(object);
   localStorage.setItem(CONFIG.STORAGE_KEY, parsed);

@@ -27,7 +27,7 @@ const register = () => {
             </div>
             <div class="mb-3">
               <label for="confirmpassword" class="form-label">Confirm Password</label>
-              <input type="confirmpassword" class="form-control" id="confirmpassword" name="confirmpassword" aria-describedby="confirmpasswordHelpInline"
+              <input type="password" class="form-control" id="confirmpassword" name="confirmPassword" aria-describedby="confirmpasswordHelpInline"
                 required>
             </div>
           </div>

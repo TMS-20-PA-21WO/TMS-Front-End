@@ -1,5 +1,6 @@
 import Paket from '../../service/api/paket';
 import itemPaket from './item-paket';
+// import itemPaket from './item-paket';
 
 class BodyAddPemesanan extends HTMLElement {
   // set paketSelected(paket) {
@@ -11,15 +12,14 @@ class BodyAddPemesanan extends HTMLElement {
   }
 
   render() {
-    // const paket = this._paketSelected;
-    // const { id, name, price } = paket;
+    // const responseData = await Paket.getAllPaket();
+    // responseData.data.forEach((item))
 
     this.innerHTML = `
 <form id="pemesanan-form">
   <div class="mb-3">
     <label for="paket" class="form-label">Nama Paket</label>
     <select id="paket" class="form-select">
-      ${itemPaket}
     </select>
   </div>
   <div class="mb-3">
@@ -34,6 +34,14 @@ class BodyAddPemesanan extends HTMLElement {
   </div>
 </form>
 `;
+    // itemPaket();
+    // const responseData = await Paket.getAllPaket();
+    // const itemList = document.querySelector('#paket');
+    // responseData.data.forEach((item) => {
+    //   itemList.innerHTML = `<option id="${item.id}">${item.package_name}</option>`;
+    //   console.log(item);
+    //   // console.log(item.package_name);
+    // });
   }
 }
 

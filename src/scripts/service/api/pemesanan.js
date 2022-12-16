@@ -4,35 +4,39 @@ const axios = require('axios');
 
 class Pemesanan {
   static async getAllPemesanan() {
-    const config = {
-      method: 'get',
-      url: API_ENDPOINT.READ_PEMESANAN,
-      headers: {},
-    };
-
-    axios(config)
-      .then((response) => {
-        console.log(JSON.stringify(response.data));
-      })
-      .catch((error) => {
-        console.log(error);
+    try {
+      const res = await axios({
+        url: API_ENDPOINT.READ_PEMESANAN,
+        method: 'get',
+        headers: {
+          'Content-Type': 'application/json',
+        },
       });
+      if (res.status === 200) {
+        // console.log(res.data);
+        return res.data;
+      }
+    } catch (err) {
+      console.error(err);
+    }
   }
 
   static async getPemesananById(id) {
-    const config = {
-      method: 'get',
-      url: API_ENDPOINT.READ_PEMESANAN_ID(id),
-      headers: {},
-    };
-
-    axios(config)
-      .then((response) => {
-        console.log(JSON.stringify(response.data));
-      })
-      .catch((error) => {
-        console.log(error);
+    try {
+      const res = await axios({
+        url: API_ENDPOINT.READ_PEMESANAN_ID(id),
+        method: 'get',
+        headers: {
+          'Content-Type': 'application/json',
+        },
       });
+      if (res.status === 200) {
+        // console.log(res.data);
+        return res.data;
+      }
+    } catch (err) {
+      console.error(err);
+    }
   }
 
   static async updatePemesanan(_id, _id_user, _id_package, _date, _phone_number) {

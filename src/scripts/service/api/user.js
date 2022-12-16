@@ -4,35 +4,39 @@ const axios = require('axios');
 
 class User {
   static async getAllUser() {
-    const config = {
-      method: 'get',
-      url: API_ENDPOINT.READ_USER,
-      headers: {},
-    };
-
-    axios(config)
-      .then((response) => {
-        console.log(response.data.data);
-      })
-      .catch((error) => {
-        console.log(error);
+    try {
+      const res = await axios({
+        url: API_ENDPOINT.READ_USER,
+        method: 'get',
+        headers: {
+          'Content-Type': 'application/json',
+        },
       });
+      if (res.status === 200) {
+        // console.log(res.data);
+        return res.data;
+      }
+    } catch (err) {
+      console.error(err);
+    }
   }
 
   static async getUserById(id) {
-    const config = {
-      method: 'get',
-      url: API_ENDPOINT.READ_PAKET_ID(id),
-      headers: {},
-    };
-
-    axios(config)
-      .then((response) => {
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
+    try {
+      const res = await axios({
+        url: API_ENDPOINT.READ_USER_ID(id),
+        method: 'get',
+        headers: {
+          'Content-Type': 'application/json',
+        },
       });
+      if (res.status === 200) {
+        console.log(res.data);
+        return res.data;
+      }
+    } catch (err) {
+      console.error(err);
+    }
   }
 }
 

@@ -9,23 +9,22 @@ class Auth {
       password: _password,
     });
 
-    const config = {
-      method: 'post',
-      url: API_ENDPOINT.LOGIN,
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      data: _data,
-    };
-
-    axios(config)
-      .then((response) => {
-        console.log(response.data.data);
-        // return response.JSON();
-      })
-      .catch((error) => {
-        console.log(error);
+    try {
+      const res = await axios({
+        url: API_ENDPOINT.LOGIN,
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        data: _data,
       });
+      if (res.status === 200) {
+        // console.log(res.data);
+        return res.data;
+      }
+    } catch (err) {
+      console.error(err);
+    }
   }
 
   static async register(_username, _email, _password) {
@@ -35,22 +34,22 @@ class Auth {
       password: _password,
     });
 
-    const config = {
-      method: 'post',
-      url: API_ENDPOINT.REGISTER,
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      data: _data,
-    };
-
-    axios(config)
-      .then((response) => {
-        console.log(JSON.stringify(response.data));
-      })
-      .catch((error) => {
-        console.log(error);
+    try {
+      const res = await axios({
+        url: API_ENDPOINT.REGISTER,
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        data: _data,
       });
+      if (res.status === 200) {
+        // console.log(res.data);
+        return res.data;
+      }
+    } catch (err) {
+      console.error(err);
+    }
   }
 }
 

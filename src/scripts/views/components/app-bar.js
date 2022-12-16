@@ -4,6 +4,7 @@ import login from './popup-login';
 import logout from './popup-logout';
 import { getDataLocalStorage, removeDataLocalStorage, saveDataToLocalStorage } from '../../data/local-storage';
 import register from './popup-register';
+import Auth from '../../service/api/auth';
 
 class AppBar extends HTMLElement {
   connectedCallback() {
@@ -83,9 +84,24 @@ class AppBar extends HTMLElement {
     const formRegister = document.querySelector('#register-form');
     formRegister.addEventListener('submit', async (e) => {
       e.preventDefault();
-      // const inputEmail = formRegister.elements.namedItem('email').value;
-      // const inputPassword = formRegister.elements.namedItem('password').value;
-      // saveDataToLocalStorage(inputEmail, inputPassword);
+      const inputName = formRegister.elements.namedItem('username').value;
+      const inputEmail = formRegister.elements.namedItem('email').value;
+      const inputPassword = formRegister.elements.namedItem('password').value;
+      const inputConfirmPassword = formRegister.elements.namedItem('confirmPassword').value;
+
+      if (inputPassword !== inputConfirmPassword) {
+        alert('Password yang dimasukkan tidak sama');
+        return false;
+      }
+
+      const responseRegister = await Auth.register(inputName, inputEmail, inputPassword);
+
+      if (responseRegister.result === true) {
+        alert('Register Berhasil. Silahkan Login');
+      } else {
+        alert('Register Gagal');
+      }
+
       location.reload();
     });
 
@@ -94,7 +110,10 @@ class AppBar extends HTMLElement {
       e.preventDefault();
       const inputEmail = formLogin.elements.namedItem('loginemail').value;
       const inputPassword = formLogin.elements.namedItem('loginpassword').value;
-      saveDataToLocalStorage(inputEmail, inputPassword);
+
+      const responseLogin = await Auth.login(inputEmail, inputPassword);
+
+      saveDataToLocalStorage(responseLogin.data[0].id, responseLogin.data[0].username);
       location.reload();
     });
   }
