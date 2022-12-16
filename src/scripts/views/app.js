@@ -1,10 +1,14 @@
 import routes from '../routes/routes';
 import UrlParser from '../routes/url-parser';
 
-// import Paket from '../service/api/paket';
-
 import './components/app-bar';
 import './components/hero-element';
+import './components/history-pemesanan';
+import './components/item-pemesanan';
+import './components/body-detail-pemesanan';
+import './components/body-add-pemesanan';
+import './components/body-edit-pemesanan';
+import './components/body-paket';
 
 class App {
   constructor({ content }) {
@@ -17,7 +21,6 @@ class App {
     await page.beforeRender();
     this.content.innerHTML = await page.render();
     await page.afterRender();
-    // Paket();
   }
 }
 

@@ -1,4 +1,6 @@
 import { getDataLocalStorage } from '../../data/local-storage';
+import Paket from '../../service/api/paket';
+import detailPemesanan from '../components/popup-detail-pemesanan';
 import pemesanan from '../components/popup-pemesanan';
 
 const Cart = {
@@ -19,12 +21,22 @@ const Cart = {
     Tambah Pemesanan
   </button>
 </div>
+<history-pemesanan></history-pemesanan>
 `;
   },
 
   async afterRender() {
+    detailPemesanan();
     pemesanan();
+    Paket.getAllPaket();
     console.log('Halaman Cart');
+    const listPemesanan = document.querySelector('#list-history-pemesanan');
+    const ItemPemesanan = document.createElement('item-pemesanan');
+    listPemesanan.appendChild(ItemPemesanan);
+
+    const listPaket = document.querySelector('#paket');
+    const itemPaket = document.createElement('body-paket');
+    listPaket.appendChild(itemPaket);
   },
 };
 

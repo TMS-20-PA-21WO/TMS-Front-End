@@ -2,7 +2,7 @@ import CONFIG from './config';
 
 const API_ENDPOINT = {
   // USER //
-  LOGIN: `${CONFIG.BASE_URL}/login`,
+  LOGIN: `${CONFIG.BASE_URL}/user/auth`,
   REGISTER: `${CONFIG.BASE_URL}/user`,
   READ_USER: `${CONFIG.BASE_URL}/user`,
   READ_USER_ID: (id) => `${CONFIG.BASE_URL}/user/${id}`,

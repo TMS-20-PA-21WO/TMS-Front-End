@@ -1,5 +1,5 @@
 const CONFIG = {
-  BASE_URL: 'localhost:8080/api',
+  BASE_URL: '//localhost:8080/api',
   STORAGE_KEY: 'DUASATU_WO',
 
   // LOGO ASSETS
