@@ -1,7 +1,8 @@
+/* eslint-disable max-len */
 import { getDataLocalStorage } from '../../data/local-storage';
-import Paket from '../../service/api/paket';
-import Pemesanan from '../../service/api/pemesanan';
-import User from '../../service/api/user';
+// import Paket from '../../service/api/paket';
+// import Pemesanan from '../../service/api/pemesanan';
+// import User from '../../service/api/user';
 import detailPemesanan from '../components/popup-detail-pemesanan';
 import pemesanan from '../components/popup-pemesanan';
 
@@ -29,25 +30,11 @@ const Cart = {
 
   async afterRender() {
     detailPemesanan();
-    pemesanan();
+    await pemesanan();
     console.log('Halaman Cart');
-    // const listPemesanan = document.querySelector('#list-history-pemesanan');
-    // const ItemPemesanan = document.createElement('item-pemesanan');
-    // listPemesanan.appendChild(ItemPemesanan);
-
-    // const listPaket = document.querySelector('#paket');
-    // const itemPaket = document.createElement('body-paket');
-    // listPaket.appendChild(itemPaket);
-
-    // User.getAllUser();
-
-    const responseData = await Pemesanan.getAllPemesanan();
-    responseData.data.forEach((item) => {
-      const itemList = document.querySelector('#pemesanan-page');
-      // itemList.innerHTML += `<option id="${item.id}">${item.package_name}</option>`;
-      console.log(item);
-      // console.log(item.package_name);
-    });
+    const listPemesanan = document.querySelector('#list-history-pemesanan');
+    const ItemPemesanan = document.createElement('item-pemesanan');
+    listPemesanan.appendChild(ItemPemesanan);
   },
 };
 
