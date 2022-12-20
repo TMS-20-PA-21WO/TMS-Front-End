@@ -29,7 +29,7 @@ class ItemPemesanan extends HTMLElement {
       </button>
     `;
     });
-    console.log(responseData.data);
+    // console.log(responseData.data);
 
     // this.innerHTML = `
     //   <button type="button" id="detailPemesanan" class="btn align-item-center py-3 px-1 w-100" data-bs-toggle="modal"

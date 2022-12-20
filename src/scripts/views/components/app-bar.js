@@ -116,7 +116,7 @@ class AppBar extends HTMLElement {
         alert('Email atau Password Salah');
       } else {
         saveDataToLocalStorage(responseLogin.data[0].id, responseLogin.data[0].username);
-        location.reload();
+        // location.reload();
       }
     });
   }

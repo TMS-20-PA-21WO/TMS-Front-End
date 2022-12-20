@@ -13,7 +13,7 @@ class Pemesanan {
         },
       });
       if (res.status === 200) {
-        // console.log(res.data);
+        console.log(res.data.data);
         return res.data;
       }
     } catch (err) {
@@ -39,11 +39,18 @@ class Pemesanan {
     }
   }
 
-  static async updatePemesanan(_id, _id_user, _id_package, _date, _phone_number) {
+  static async updatePemesanan(_id_user, _id_package, _date, _phone_number) {
     const _data = JSON.stringify({
-      id: _id,
-      id_user: _id_user,
-      id_package: _id_package,
+      user: [
+        {
+          id: _id_user,
+        },
+      ],
+      paket: [
+        {
+          id: _id_package,
+        },
+      ],
       date: _date,
       phone_number: _phone_number,
     });
@@ -68,16 +75,13 @@ class Pemesanan {
 
   static async createPemesanan(_id_user, _id_package, _date, _phone_number) {
     const _data = JSON.stringify({
-      user: [
-        {
-          id: _id_user,
-        },
-      ],
-      paket: [
-        {
-          id: _id_package,
-        },
-      ],
+      user: {
+        id: _id_user,
+      },
+
+      paket: {
+        id: _id_package,
+      },
       date: _date,
       phone_number: _phone_number,
     });
@@ -92,7 +96,7 @@ class Pemesanan {
         data: _data,
       });
       if (res.status === 200) {
-        // console.log(res.data);
+        console.log(res.data);
         return res.data;
       }
     } catch (err) {
