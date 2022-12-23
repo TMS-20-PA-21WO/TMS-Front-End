@@ -8,6 +8,7 @@ import './components/item-pemesanan';
 import './components/body-detail-pemesanan';
 import './components/body-add-pemesanan';
 import './components/body-edit-pemesanan';
+import './components/body-delete-pemesanan';
 
 class App {
   constructor({ content }) {

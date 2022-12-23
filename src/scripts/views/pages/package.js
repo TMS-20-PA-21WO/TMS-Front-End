@@ -5,7 +5,6 @@ const Package = {
   async beforeRender() {
     if (getDataLocalStorage() === null) {
       location.replace('#/package');
-      // location.reload();
     } else {
       location.replace('#/package');
     }
@@ -23,7 +22,7 @@ const Package = {
         dengan begitu kami berharap sinergi ini akan menjadi kolaborasi dahsyat untuk menghidupkan mimpi anda menjadi moment terindah untuk anda kenang.
     </p><br>
 
-    <h2>Paket:</h2>
+    <h2 class="mb-3">Paket:</h2>
     <div class="container text-center bg-transparent">
         <div class="row">    
             <div class="col-6">
@@ -54,7 +53,6 @@ const Package = {
                 <h3>Wedding Planer Service</h3><br>
                 <p>Paket yang dapat menghadirkan pengalaman terbaik dalam merayakan hari romantis anda bersama. Dengan pilihan paket ini, anda akan mendapatkan pelayanan jasa termaksimal dari kami dalam semua bidang untuk menghadirkan nuansa penikahan paling berkesan dalam hidup anda.</p>
             </div>
-
         </div>
     </div>
 </div>

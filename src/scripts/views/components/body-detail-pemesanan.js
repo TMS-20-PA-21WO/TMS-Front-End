@@ -1,45 +1,40 @@
+/* eslint-disable object-curly-newline */
 class BodyDetailPemesanan extends HTMLElement {
-  //   set transaction(transaction) {
-  //     this._transaction = transaction;
-  //     this._render();
-  //   }
-  connectedCallback() {
+  set detail(pemesanan) {
+    this._pemesanan = pemesanan;
     this.render();
   }
 
   render() {
-    // const transaction = this._transaction;
-    // const {
-    //   name, date, urlIcon, category,
-    //   amount, colorTextAmountClass,
-    // } = transactionFormated(transaction);
+    const pemesanan = this._pemesanan;
+    const { user, paket, date, phone_number } = pemesanan;
 
     this.innerHTML = `
 <table class="table table-striped">
     <tbody>
       <tr>
         <td>Username</td>
-        <td>Otto</td>
+        <td>${user.username}</td>
       </tr>
       <tr>
         <td>Email</td>
-        <td>Thornton</td>
+        <td>${user.email}</td>
       </tr>
       <tr>
         <td>No Telepon</td>
-        <td>1111111</td>
+        <td>${phone_number}</td>
       </tr>
       <tr>
         <td>Nama Paket</td>
-        <td>1111111</td>
+        <td>${paket.package_name}</td>
       </tr>
       <tr>
         <td>Harga</td>
-        <td>1111111</td>
+        <td>Rp. ${paket.price}</td>
       </tr>
       <tr>
         <td>Tanggal</td>
-        <td>1111111</td>
+        <td>${date}</td>
       </tr>
     </tbody>
 </table>

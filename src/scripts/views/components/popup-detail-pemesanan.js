@@ -29,11 +29,7 @@ const detailPemesanan = () => {
       <div class="modal-body">
         <span>Apakah kamu yakin akan menghapus pemesanan?</span>
       </div>
-      <div class="modal-footer justify-content-between">
-        <button type="button" class="btn btn-secondary col-4" data-bs-toggle="modal"
-            data-bs-target="#detailPemesanan" aria-label="Close">Cancel</button>
-        <button type="button" class="btn btn-danger col-4" id="btnHapusPemesanan">Hapus</button>
-      </div>
+      <body-delete-pemesanan class="modal-footer justify-content-between"></body-delete-pemesanan>
     </div>
   </div>
 </div>
@@ -46,12 +42,6 @@ const detailPemesanan = () => {
         <button type="button" class="btn-close p-3" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <body-edit-pemesanan class="modal-body"></body-edit-pemesanan>
-      <div class="modal-footer justify-content-between">
-        <button type="button" class="btn btn-secondary col-4" data-bs-toggle="modal"
-          data-bs-target="#detailPemesanan" aria-label="Close">Cancel</button>
-        <button type="button" class="btn btn-success col-4" data-bs-toggle="modal"
-          data-bs-target="#editTransaksi" id="btnEditPemesanan">Pesan</button>
-      </div>
     </div>
   </div>
 </div>

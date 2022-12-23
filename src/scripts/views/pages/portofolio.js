@@ -5,7 +5,6 @@ const Portofolio = {
   async beforeRender() {
     if (getDataLocalStorage() === null) {
       location.replace('#/portofolio');
-      // location.reload();
     } else {
       location.replace('#/portofolio');
     }

@@ -5,7 +5,6 @@ const About = {
   async beforeRender() {
     if (getDataLocalStorage() === null) {
       location.replace('#/about');
-      //   location.reload();
     } else {
       location.replace('#/about');
     }

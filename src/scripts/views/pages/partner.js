@@ -5,7 +5,6 @@ const Partner = {
   async beforeRender() {
     if (getDataLocalStorage() === null) {
       location.replace('#/partner');
-      // location.reload();
     } else {
       location.replace('#/partner');
     }
@@ -17,160 +16,160 @@ const Partner = {
     <!-- <h1>Mitra Kami</h1> -->
 
     <h2 class="text-left">Dekorasi<h2>     
-    <div class="row">
+    <div class="row border">
 
-        <div class="col-6 col-lg-3 bg-secondary p-3">
+        <div class="col-6 col-lg-3 p-3">
             <div class="container text-center bg-transparent">
                 <p>
-                    <img src="${CONFIG.PARTNER_DEKORASI_AERODECOR}" class="img img-fluid" alt="Aerodecor">
+                    <img src="${CONFIG.PARTNER_DEKORASI_AERODECOR}" class="img img-fluid img-thumbnail" alt="Aerodecor">
                 </p>
             </div>
         </div>
 
-        <div class="col-6 col-lg-3 bg-secondary p-3">
+        <div class="col-6 col-lg-3 p-3">
             <div class="container text-center bg-transparent">
                 <p>
-                    <img src="${CONFIG.PARTNER_DEKORASI_MUSTIKA}" class="img img-fluid" alt="Mustika">
+                    <img src="${CONFIG.PARTNER_DEKORASI_MUSTIKA}" class="img img-fluid img-thumbnail" alt="Mustika">
                 </p>
             </div>
         </div>
 
-        <div class="col-6 col-lg-3 bg-secondary p-3">
+        <div class="col-6 col-lg-3 p-3">
             <div class="container text-center bg-transparent">
                 <p>
-                    <img src="${CONFIG.PARTNER_DEKORASI_SEKAR}" class="img img-fluid" alt="Sekar99">
+                    <img src="${CONFIG.PARTNER_DEKORASI_SEKAR}" class="img img-fluid img-thumbnail" alt="Sekar99">
                 </p>
             </div>
         </div>
 
-        <div class="col-6 col-lg-3 bg-secondary p-3">
+        <div class="col-6 col-lg-3 p-3">
             <div class="container text-center bg-transparent">
                 <p>
-                    <img src="${CONFIG.PARTNER_DEKORASI_AISYA}" class="img img-fluid" alt="Aisya">
+                    <img src="${CONFIG.PARTNER_DEKORASI_AISYA}" class="img img-fluid img-thumbnail" alt="Aisya">
                 </p>
             </div>
         </div>
     </div>
 
     <h2 class="text-left">Make Up Artist<h2>
-    <div class="row">
-        <div class="col-6 col-lg-3 bg-secondary p-3">
+    <div class="row border">
+        <div class="col-6 col-lg-3 p-3">
             <div class="container text-center bg-transparent">
                 <p>
-                    <img src="${CONFIG.PARTNER_MAKEUP_SHAIRA}" class="img img-fluid" alt="Shaira">
+                    <img src="${CONFIG.PARTNER_MAKEUP_SHAIRA}" class="img img-fluid img-thumbnail" alt="Shaira">
                 </p>
             </div>
         </div>
 
-        <div class="col-6 col-lg-3 bg-secondary p-3">
+        <div class="col-6 col-lg-3 p-3">
             <div class="container text-center bg-transparent">
                 <p>
-                    <img src="${CONFIG.PARTNER_MAKEUP_MALATHI}" class="img img-fluid" alt="Malathi">
+                    <img src="${CONFIG.PARTNER_MAKEUP_MALATHI}" class="img img-fluid img-thumbnail" alt="Malathi">
                 </p>
             </div>
         </div>
 
-        <div class="col-6 col-lg-3 bg-secondary p-3">
+        <div class="col-6 col-lg-3 p-3">
             <div class="container text-center bg-transparent">
                 <p>
-                    <img src="${CONFIG.PARTNER_MAKEUP_AISYA}" class="img img-fluid" alt="Aisya">
+                    <img src="${CONFIG.PARTNER_MAKEUP_AISYA}" class="img img-fluid img-thumbnail" alt="Aisya">
                 </p>
             </div>
         </div>
 
-        <div class="col-6 col-lg-3 bg-secondary p-3">
+        <div class="col-6 col-lg-3 p-3">
             <div class="container text-center bg-transparent">
                 <p>
-                    <img src="${CONFIG.PARTNER_MAKEUP_INTAN}" class="img img-fluid" alt="Intan">
+                    <img src="${CONFIG.PARTNER_MAKEUP_INTAN}" class="img img-fluid img-thumbnail" alt="Intan">
                 </p>
             </div>
         </div>
     </div>
 
     <h2 class="text-left">Photo Studio<h2>
-    <div class="row">
-        <div class="col-6 col-lg-3 bg-secondary p-3">
+    <div class="row border">
+        <div class="col-6 col-lg-3 p-3">
             <div class="container text-center bg-transparent">
                 <p>
-                    <img src="${CONFIG.PARTNER_PHOTOSTUDIO_CASSADA}" class="img img-fluid" alt="Cassada">
+                    <img src="${CONFIG.PARTNER_PHOTOSTUDIO_CASSADA}" class="img img-fluid img-thumbnail" alt="Cassada">
                 </p>
             </div>
         </div>
 
-        <div class="col-6 col-lg-3 bg-secondary p-3">
+        <div class="col-6 col-lg-3 p-3">
             <div class="container text-center bg-transparent">
                 <p>
-                    <img src="${CONFIG.PARTNER_PHOTOSTUDIO_VINDICE}" class="img img-fluid" alt="Vindice">
+                    <img src="${CONFIG.PARTNER_PHOTOSTUDIO_VINDICE}" class="img img-fluid img-thumbnail" alt="Vindice">
                 </p>
             </div>
         </div>
 
-        <div class="col-6 col-lg-3 bg-secondary p-3">
+        <div class="col-6 col-lg-3 p-3">
             <div class="container text-center bg-transparent">   
                 <p>
-                    <img src="${CONFIG.PARTNER_PHOTOSTUDIO_MAMOTO}" class="img img-fluid" alt="Mamoto">
+                    <img src="${CONFIG.PARTNER_PHOTOSTUDIO_MAMOTO}" class="img img-fluid img-thumbnail" alt="Mamoto">
                 </p>
             </div>
         </div>
 
-        <div class="col-6 col-lg-3 bg-secondary p-3">
+        <div class="col-6 col-lg-3 p-3">
             <div class="container text-center bg-transparent">
                 <p>
-                <img src="${CONFIG.PARTNER_PHOTOSTUDIO_LURBIS}" class="img img-fluid" alt="Lurbis">
+                <img src="${CONFIG.PARTNER_PHOTOSTUDIO_LURBIS}" class="img img-fluid img-thumbnail" alt="Lurbis">
                 </p>
             </div>
         </div>
     </div>
 
     <h2 class="text-left">MC<h2>
-    <div class="row">
-        <div class="col-6 col-lg-3 bg-secondary p-3">
+    <div class="row border">
+        <div class="col-6 col-lg-3 p-3">
             <div class="container text-center bg-transparent">
                 <p>
-                    <img src="${CONFIG.PARTNER_MC_MOULYA}" class="img img-fluid" alt="Moulya">
+                    <img src="${CONFIG.PARTNER_MC_MOULYA}" class="img img-fluid img-thumbnail" alt="Moulya">
                 </p>
             </div>
         </div>
 
-        <div class="col-6 col-lg-3 bg-secondary p-3">
+        <div class="col-6 col-lg-3 p-3">
             <div class="container text-center bg-transparent">
                 <p>
-                    <img src="${CONFIG.PARTNER_MC_BARRY}" class="img img-fluid" alt="Barry">
+                    <img src="${CONFIG.PARTNER_MC_BARRY}" class="img img-fluid img-thumbnail" alt="Barry">
                 </p>
             </div>
         </div>
 
-        <div class="col-6 col-lg-3 bg-secondary p-3">
+        <div class="col-6 col-lg-3 p-3">
             <div class="container text-center bg-transparent">
                 <p>
-                    <img src="${CONFIG.PARTNER_MC_WINDIWIJAKSANA}" class="img img-fluid" alt="Windiwijaksana">
+                    <img src="${CONFIG.PARTNER_MC_WINDIWIJAKSANA}" class="img img-fluid img-thumbnail" alt="Windiwijaksana">
                 </p>
             </div>
         </div>
 
-        <div class="col-6 col-lg-3 bg-secondary p-3">
+        <div class="col-6 col-lg-3 p-3">
             <div class="container text-center bg-transparent">
                 <p>
-                    <img src="${CONFIG.PARTNER_MC_YOHANSAPUTRA}" class="img img-fluid" alt="Yohansaputra">
+                    <img src="${CONFIG.PARTNER_MC_YOHANSAPUTRA}" class="img img-fluid img-thumbnail" alt="Yohansaputra">
                 </p>
             </div>
         </div>
     </div>
 
     <h2 class="text-left">Music<h2>
-    <div class="row">
-        <div class="col-6 col-lg-3 bg-secondary p-3">
+    <div class="row border">
+        <div class="col-6 col-lg-3 p-3">
             <div class="container text-center bg-transparent">
                 <p>
-                <img src="${CONFIG.PARTNER_MUSIC_GOLDENMUSIC}" class="img img-fluid" alt="Goldenmusic">
+                <img src="${CONFIG.PARTNER_MUSIC_GOLDENMUSIC}" class="img img-fluid img-thumbnail" alt="Goldenmusic">
                 </p>
             </div>
         </div>
 
-        <div class="col-6 col-lg-3 bg-secondary p-3">
+        <div class="col-6 col-lg-3 p-3">
             <div class="container text-center bg-transparent">
                 <p>
-                <img src="${CONFIG.PARTNER_MUSIC_BOUGENVILLE}" class="img img-fluid" alt="Bougenville">
+                <img src="${CONFIG.PARTNER_MUSIC_BOUGENVILLE}" class="img img-fluid img-thumbnail" alt="Bougenville">
                 </p>
             </div>
         </div>

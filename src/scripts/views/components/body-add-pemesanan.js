@@ -49,8 +49,6 @@ class BodyAddPemesanan extends HTMLElement {
 `;
     const formPemesanan = document.querySelector('#pemesanan-form');
     const selectedPaket = document.getElementById('paket');
-    const responseData = await Pemesanan.getAllPemesanan();
-    console.log(responseData);
 
     formPemesanan.addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -59,29 +57,22 @@ class BodyAddPemesanan extends HTMLElement {
       const inputTelp = formPemesanan.elements.namedItem('nomorTelepon').value;
       const userId = getDataLocalStorage().userId;
 
-      if (inputDate === responseData.data.date) {
-        alert('Mohon Maaf Tanggal Sudah Anda Pesan');
-        return false;
-      }
+      const validation = await Pemesanan.pemesananValidation(userId, inputDate);
 
-      const responsePemesanan = await Pemesanan.createPemesanan(userId, inputPaket, inputDate, inputTelp);
-      console.log(responsePemesanan);
+      if (validation[0] == null) {
+        const responsePemesanan = await Pemesanan.createPemesanan(userId, inputPaket, inputDate, inputTelp);
 
-      if (responsePemesanan.result === true) {
-        alert('Pesanan Berhasil');
-        // location.reload();
+        if (responsePemesanan.result === true) {
+          alert('Pesanan Berhasil');
+          location.reload();
+        } else {
+          alert('Pesanan Gagal');
+        }
       } else {
-        alert('Pesanan Gagal');
+        console.log('tanggal yang anda pesan sudah dipesan');
+        alert('tanggal yang anda pesan sudah dipesan');
       }
     });
-    // itemPaket();
-    // const responseData = await Paket.getAllPaket();
-    // const itemList = document.querySelector('#paket');
-    // responseData.data.forEach((item) => {
-    //   itemList.innerHTML = `<option id="${item.id}">${item.package_name}</option>`;
-    //   console.log(item);
-    //   // console.log(item.package_name);
-    // });
   }
 }
 

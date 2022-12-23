@@ -53,7 +53,7 @@ class AppBar extends HTMLElement {
           </li>
           <li class="nav-item" id="logoutButton">
             <button type="button" class="btn btn-transparent" data-bs-toggle="modal" data-bs-target="#logout">
-              Logout
+              Logout ${getDataLocalStorage().userUsername}
             </button>
           </li>`;
     }
@@ -111,12 +111,13 @@ class AppBar extends HTMLElement {
       const inputPassword = formLogin.elements.namedItem('loginpassword').value;
 
       const responseLogin = await Auth.login(inputEmail, inputPassword);
+      console.log(responseLogin);
 
       if (responseLogin.data[0] == null) {
         alert('Email atau Password Salah');
       } else {
         saveDataToLocalStorage(responseLogin.data[0].id, responseLogin.data[0].username);
-        // location.reload();
+        location.reload();
       }
     });
   }
