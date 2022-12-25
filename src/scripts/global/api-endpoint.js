@@ -6,6 +6,7 @@ const API_ENDPOINT = {
   REGISTER: `${CONFIG.BASE_URL}/user`,
   READ_USER: `${CONFIG.BASE_URL}/user`,
   READ_USER_ID: (id) => `${CONFIG.BASE_URL}/user/${id}`,
+  READ_USER_BY_EMAIL: `${CONFIG.BASE_URL}/user/findEmail`,
 
   // PEMESANAN //
   CREATE_PEMESANAN: `${CONFIG.BASE_URL}/pemesanan`,

@@ -1,17 +1,17 @@
 import CONFIG from '../../global/config';
-// import member from '../../utils/member';
 import login from './popup-login';
 import logout from './popup-logout';
 import { getDataLocalStorage, removeDataLocalStorage, saveDataToLocalStorage } from '../../data/local-storage';
 import register from './popup-register';
 import Auth from '../../service/api/auth';
+import User from '../../service/api/user';
 
 class AppBar extends HTMLElement {
   connectedCallback() {
     this.render();
   }
 
-  render() {
+  async render() {
     this.innerHTML = `
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
@@ -94,13 +94,18 @@ class AppBar extends HTMLElement {
         return false;
       }
 
-      const responseRegister = await Auth.register(inputName, inputEmail, inputPassword);
+      const validation = await User.getUserByEmail(inputEmail);
+      if (validation[0] == null) {
+        const responseRegister = await Auth.register(inputName, inputEmail, inputPassword);
 
-      if (responseRegister.result === true) {
-        alert('Register Berhasil. Silahkan Login');
-        location.reload();
+        if (responseRegister.result === true) {
+          alert('Register Berhasil. Silahkan Login');
+          location.reload();
+        } else {
+          alert('Register Gagal');
+        }
       } else {
-        alert('Register Gagal');
+        alert('Email Sudah Terdaftar');
       }
     });
 

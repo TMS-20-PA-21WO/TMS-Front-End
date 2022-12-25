@@ -15,7 +15,7 @@ const Cart = {
     return `
 <div class="container" id="pemesanan-page">
   <h1>Pemesanan</h1>
-  <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#pemesanan">
+  <button type="button" class="btn btn-success mb-5" data-bs-toggle="modal" data-bs-target="#pemesanan">
     Tambah Pemesanan
   </button>
 </div>
