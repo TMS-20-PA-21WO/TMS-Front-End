@@ -1,3 +1,4 @@
+import { getDataLocalStorage, removeDataLocalStorage } from '../../data/local-storage';
 import API_ENDPOINT from '../../global/api-endpoint';
 
 const axios = require('axios');
@@ -9,42 +10,7 @@ class Pemesanan {
         url: API_ENDPOINT.READ_PEMESANAN,
         method: 'get',
         headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-      if (res.status === 200) {
-        // console.log(res.data);
-        return res.data.data;
-      }
-    } catch (err) {
-      console.error(err);
-    }
-  }
-
-  static async getPemesananById(id) {
-    try {
-      const res = await axios({
-        url: API_ENDPOINT.READ_PEMESANAN_ID(id),
-        method: 'get',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-      if (res.status === 200) {
-        // console.log(res.data);
-        return res.data.data;
-      }
-    } catch (err) {
-      console.error(err);
-    }
-  }
-
-  static async deletePemesananById(id) {
-    try {
-      const res = await axios({
-        url: API_ENDPOINT.DELETE_PEMESANAN_ID(id),
-        method: 'delete',
-        headers: {
+          Authorization: `Bearer ${getDataLocalStorage().userAccessToken}`,
           'Content-Type': 'application/json',
         },
       });
@@ -54,6 +20,53 @@ class Pemesanan {
       }
     } catch (err) {
       console.error(err);
+      alert('Sesi telah Expired, Silahkan Login Kembali');
+      removeDataLocalStorage();
+      location.reload();
+    }
+  }
+
+  static async getPemesananById(id) {
+    try {
+      const res = await axios({
+        url: API_ENDPOINT.READ_PEMESANAN_ID(id),
+        method: 'get',
+        headers: {
+          Authorization: `Bearer ${getDataLocalStorage().userAccessToken}`,
+          'Content-Type': 'application/json',
+        },
+      });
+      if (res.status === 200) {
+        // console.log(res.data);
+        return res.data.data;
+      }
+    } catch (err) {
+      console.error(err);
+      alert('Sesi telah Expired, Silahkan Login Kembali');
+      removeDataLocalStorage();
+      location.reload();
+    }
+  }
+
+  static async deletePemesananById(id) {
+    try {
+      const res = await axios({
+        url: API_ENDPOINT.DELETE_PEMESANAN_ID(id),
+        method: 'delete',
+        headers: {
+          Authorization: `Bearer ${getDataLocalStorage().userAccessToken}`,
+          'Content-Type': 'application/json',
+        },
+      });
+      if (res.status === 200) {
+        // console.log(res.data);
+        return res.data;
+      }
+    } catch (err) {
+      console.error(err);
+      alert('Sesi telah Expired, Silahkan Login Kembali');
+      removeDataLocalStorage();
+      location.reload();
     }
   }
 
@@ -67,6 +80,7 @@ class Pemesanan {
         url: API_ENDPOINT.READ_PEMESANAN_USER,
         method: 'post',
         headers: {
+          Authorization: `Bearer ${getDataLocalStorage().userAccessToken}`,
           'Content-Type': 'application/json',
         },
         data: _data,
@@ -77,6 +91,9 @@ class Pemesanan {
       }
     } catch (err) {
       console.error(err);
+      alert('Sesi telah Expired, Silahkan Login Kembali');
+      removeDataLocalStorage();
+      location.reload();
     }
   }
 
@@ -99,6 +116,7 @@ class Pemesanan {
         url: API_ENDPOINT.UPDATE_PEMESANAN,
         method: 'put',
         headers: {
+          Authorization: `Bearer ${getDataLocalStorage().userAccessToken}`,
           'Content-Type': 'application/json',
         },
         data: _data,
@@ -109,6 +127,9 @@ class Pemesanan {
       }
     } catch (err) {
       console.error(err);
+      alert('Sesi telah Expired, Silahkan Login Kembali');
+      removeDataLocalStorage();
+      location.reload();
     }
   }
 
@@ -130,6 +151,7 @@ class Pemesanan {
         url: API_ENDPOINT.CREATE_PEMESANAN,
         method: 'post',
         headers: {
+          Authorization: `Bearer ${getDataLocalStorage().userAccessToken}`,
           'Content-Type': 'application/json',
         },
         data: _data,
@@ -140,6 +162,9 @@ class Pemesanan {
       }
     } catch (err) {
       console.error(err);
+      alert('Sesi telah Expired, Silahkan Login Kembali');
+      removeDataLocalStorage();
+      location.reload();
     }
   }
 
@@ -154,6 +179,7 @@ class Pemesanan {
         url: API_ENDPOINT.PEMESANAN_VALIDATION,
         method: 'post',
         headers: {
+          Authorization: `Bearer ${getDataLocalStorage().userAccessToken}`,
           'Content-Type': 'application/json',
         },
         data: _data,
@@ -164,6 +190,9 @@ class Pemesanan {
       }
     } catch (err) {
       console.error(err);
+      alert('Sesi telah Expired, Silahkan Login Kembali');
+      removeDataLocalStorage();
+      location.reload();
     }
   }
 }

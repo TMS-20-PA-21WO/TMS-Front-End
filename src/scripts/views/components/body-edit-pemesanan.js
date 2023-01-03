@@ -44,7 +44,7 @@ class BodyEditPemesanan extends HTMLElement {
     </div>
   </form>
   `;
-    console.log(id);
+    // console.log(id);
     const formPemesanan = document.querySelector('#edit-pemesanan-form');
     const selectedPaket = document.getElementById('edit-paket');
 

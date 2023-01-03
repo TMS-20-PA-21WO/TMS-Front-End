@@ -1,3 +1,6 @@
+import { rupiahFormat } from '../../utils/format-currency-idr';
+import { formattingDateFromServer } from '../../utils/format-date';
+
 /* eslint-disable object-curly-newline */
 class BodyDetailPemesanan extends HTMLElement {
   set detail(pemesanan) {
@@ -30,11 +33,11 @@ class BodyDetailPemesanan extends HTMLElement {
       </tr>
       <tr>
         <td>Harga</td>
-        <td>Rp. ${paket.price}</td>
+        <td>${rupiahFormat(paket.price)}</td>
       </tr>
       <tr>
         <td>Tanggal</td>
-        <td>${date}</td>
+        <td>${formattingDateFromServer(date)}</td>
       </tr>
     </tbody>
 </table>

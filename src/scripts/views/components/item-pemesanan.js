@@ -1,3 +1,5 @@
+import { formattingDateFromServer } from '../../utils/format-date';
+
 /* eslint-disable object-curly-newline */
 class ItemPemesanan extends HTMLElement {
   set dataPemesanan(pemesanan) {
@@ -20,7 +22,7 @@ class ItemPemesanan extends HTMLElement {
             <p class="headerTransaksi text-center">${paket.package_name}</p>
           </div>
           <div class="d-flex flex-column flex-fill">
-            <p class="headerTransaksi text-center">${date}</p>
+            <p class="headerTransaksi text-center">${formattingDateFromServer(date)}</p>
           </div>
         </div>
       </button>

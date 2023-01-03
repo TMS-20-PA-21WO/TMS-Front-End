@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import CONFIG from '../../global/config';
 import login from './popup-login';
 import logout from './popup-logout';
@@ -95,6 +96,7 @@ class AppBar extends HTMLElement {
       }
 
       const validation = await User.getUserByEmail(inputEmail);
+
       if (validation[0] == null) {
         const responseRegister = await Auth.register(inputName, inputEmail, inputPassword);
 
@@ -116,12 +118,14 @@ class AppBar extends HTMLElement {
       const inputPassword = formLogin.elements.namedItem('loginpassword').value;
 
       const responseLogin = await Auth.login(inputEmail, inputPassword);
-      console.log(responseLogin);
+      // console.log(responseLogin.access_token);
+      const validation = await User.getUserByEmail(inputEmail);
+      // console.log(validation[0]);
 
-      if (responseLogin.data[0] == null) {
+      if (validation[0] == null) {
         alert('Email atau Password Salah');
       } else {
-        saveDataToLocalStorage(responseLogin.data[0].id, responseLogin.data[0].username);
+        saveDataToLocalStorage(validation[0].id, validation[0].username, responseLogin.access_token);
         location.reload();
       }
     });
