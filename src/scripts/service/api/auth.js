@@ -24,6 +24,7 @@ class Auth {
       }
     } catch (err) {
       console.error(err);
+      return null;
     }
   }
 

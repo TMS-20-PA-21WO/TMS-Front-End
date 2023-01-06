@@ -117,12 +117,12 @@ class AppBar extends HTMLElement {
       const inputEmail = formLogin.elements.namedItem('loginemail').value;
       const inputPassword = formLogin.elements.namedItem('loginpassword').value;
 
-      const responseLogin = await Auth.login(inputEmail, inputPassword);
-      // console.log(responseLogin.access_token);
       const validation = await User.getUserByEmail(inputEmail);
       // console.log(validation[0]);
+      const responseLogin = await Auth.login(inputEmail, inputPassword);
+      // console.log(responseLogin.access_token);
 
-      if (validation[0] == null) {
+      if (responseLogin == null) {
         alert('Email atau Password Salah');
       } else {
         saveDataToLocalStorage(validation[0].id, validation[0].username, responseLogin.access_token);
