@@ -56,7 +56,7 @@ const Home = {
                           </div>
                           <div class="col-sm-6, container text-center bg-transparent" style="">
                               <h4 class="card-title">Gina & Fahmi</h4>
-                              <p class="card-text">lorem</p>
+                              <p class="card-text">Momen sakral kami semakin lengkap berkat <br> DuaSatu Wedding Organizer.</p>
                           </div>
                       </div>
                   </div>
@@ -71,7 +71,7 @@ const Home = {
                           </div>
                           <div class="col-sm-6, container text-center bg-transparent" style="">
                               <h4 class="card-title">Ayu & Randi</h4>
-                              <p class="card-text">lorem</p>
+                              <p class="card-text">My unforgettable moment is really perfect because DuaSatu Wedding Organizer made our wedding spectacular.</p>
                           </div>
                       </div>
                   </div>

@@ -5,6 +5,7 @@ import detailPemesanan from '../components/popup-detail-pemesanan';
 const Cart = {
   async beforeRender() {
     if (getDataLocalStorage() === null) {
+      alert('Anda Harus Login Terlebih Dahulu');
       location.replace('#');
     } else {
       location.replace('#/cart');
