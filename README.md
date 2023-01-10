@@ -12,7 +12,7 @@ To get started running the project locally, please follow the steps below.
 First, clone the repository.
 
 ```bash
-git clone https://github.com/TMS-20-PA-21WO/TMS-Front-End
+git clone https://github.com/TMS-20-PA-21WO/TMS-Front-End.git
 ```
 
 Then, install dependencies and fetch data to your local machine. **Note that we use NPM, not YARN.**
